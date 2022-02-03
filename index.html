@@ -232,6 +232,13 @@
     firstNameLength = firstName[2];
     console.log(firstNameLength); // v
 
+    // String Immutability
+    var myStr = "Jello World";
+    // can't change the var like this
+    myStr[0] = "H"; // wont work
+    // but completely changing it, will work.
+    myStr = "Hello World"; // error
+    console.log(myStr); // v
 
 
 </script>
