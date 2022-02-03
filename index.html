@@ -223,14 +223,14 @@
     // Bracket Notation to find First [0] character in string
     var firstName = "Kevin";
 
-    firstNameLength = firstName[0];
-    console.log(firstNameLength); // K
+    findLetterInFirstName = firstName[0];
+    console.log(findLetterInFirstName); // K
 
     // Bracket Notation to find First [0] character in string
     var firstName = "Kevin";
 
-    firstNameLength = firstName[2];
-    console.log(firstNameLength); // v
+    findThirdLetterInFirstName = firstName[2];
+    console.log(findThirdLetterInFirstName); // v
 
     // String Immutability
     var myStr = "Jello World";
@@ -238,7 +238,26 @@
     myStr[0] = "H"; // wont work
     // but completely changing it, will work.
     myStr = "Hello World"; // error
-    console.log(myStr); // v
+    console.log(myStr); // Hello World
+
+    // Bracket notation to find the nth character in a string
+    var firstName = "Kevin";
+    var secondLetterOfFirstName = firstName[1];
+    console.log(secondLetterOfFirstName); // e
+    var thirdLetterOfFirstName = firstName[2];
+    console.log(thirdLetterOfFirstName); // v
+
+
+    // Bracket notation to find the LAST character in a string
+    var lastName2 = "Sherman";
+    var lastLetterOfLastName = lastName2[lastName2.length - 1];
+    console.log(lastLetterOfLastName); // n
+
+
+    // Bracket notation to find the Nth to LAST character 
+    var lastName3 = "Sherman";
+    var thirdToLastLetterOfLastName = lastName3[lastName3.length - 3];
+    console.log(thirdToLastLetterOfLastName); // m
 
 
 </script>
