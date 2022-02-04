@@ -385,7 +385,7 @@
     // console.log(scopeTest); // scopeTest not defined
 
 
-
+    // More scope example
     var outerWear = "jacket";
     
     function myOutFit(){
@@ -397,6 +397,44 @@
     console.log(myOutFit());
 
 
+
+    // return a val from a function with a return;
+    function minusSeven(num){
+        return num - 7;
+    }
+    
+    console.log( minusSeven(5) ); // -2
+
+    function timesFive(num){
+        return num * 5;
+    }
+    console.log( timesFive(5) ); // 25
+    
+
+    // Undefined Value returned from a function
+    var sum = 0;
+    function addThree(){
+        sum = sum + 3;
+    }
+    console.log(addThree()); // undefined
+
+    function addFive(){
+        sum += 5;
+        return sum;
+    }
+    console.log(addFive()); // returns 8
+
+
+    // Assignment with a return value
+    var changed = 0;
+    function change(num) {
+        return (num + 5) / 3; // 5
+    }
+
+    changed = change(10);
+    console.log(changed); // 5
+
+    
 
 
 
