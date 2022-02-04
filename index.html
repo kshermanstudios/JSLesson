@@ -363,6 +363,8 @@
         // without var it would be set as global
         // which isn't really good code
 
+        var scopeTest = 5;
+        console.log(scopeTest);
     }
 
     function fun2(){
@@ -378,10 +380,21 @@
 
     fun1();
     fun2();
+    
+    // this will cause error as scopeTest is not in global scope
+    // console.log(scopeTest); // scopeTest not defined
 
 
 
-
+    var outerWear = "jacket";
+    
+    function myOutFit(){
+        var outerWear = "sweater"; // this takes precedence over the global
+        return outerWear;
+    }
+    
+    console.log(outerWear);
+    console.log(myOutFit());
 
 
 
