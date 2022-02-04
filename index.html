@@ -1,4 +1,11 @@
-<script>
+<!doctype html>
+
+</head><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Lessons</title>
+    
+    <script>
     // comments!
     console.log('Hello World');
 
@@ -416,7 +423,7 @@
     function addThree(){
         sum = sum + 3;
     }
-    console.log(addThree()); // undefined
+    console.log(addThree()); // thiw will be undefined
 
     function addFive(){
         sum += 5;
@@ -434,18 +441,62 @@
     changed = change(10);
     console.log(changed); // 5
 
-    
 
 
+    // Stand in line "queue items"
+    // simulated with this func
+    // you can add item to the array and will return the first item
+
+    function nextInLine(arr, num){
+        arr.push(num);
+        return arr.shift();
+    }
+
+    var testArr = [1,2,3,4,5];
+
+    console.log("Before: " + JSON.stringify(testArr));
+    console.log("Removed the num " + nextInLine(testArr, 6));
+    console.log("After: " + JSON.stringify(testArr));
+    console.log("Removed the num " + nextInLine(testArr, 7));
+    console.log("After After: " + JSON.stringify(testArr));
 
 
-
-    
-
-
-
+    /*
+    Before: [1,2,3,4,5] index.html:457:13
+    Removed the num 1 index.html:458:13
+    After: [2,3,4,5,6] index.html:459:13
+    Removed the num 2 index.html:460:13
+    After After: [3,4,5,6,7]
+    */
 
 
 
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div>
+        <p style="color:rgb(230, 99, 13)">
+            View the JS console.
+        </p>
+    </div>
+</body>
+</html>
