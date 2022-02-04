@@ -486,6 +486,45 @@
     console.log("isItTrue: " + ourTrueOrFalse(false));
 
 
+
+    // Comparison with the Equality Operator
+    function testEqual(val){
+        if(val == 12) {
+            return "Equal"; 
+        }
+        return "Not Equal";
+    }
+
+    testEqual(2);
+    console.log("testEqual: " + testEqual(12)); // Equal - "12" works too
+
+
+    // Comparison with the STRICT Equality (===) Operator
+    function testSTRICT(val){
+        if(val === 7) {
+            return "Equal"; 
+        }
+        return "Not Equal";
+    }
+
+    testSTRICT(2);
+    console.log("testSTRICT: " + testSTRICT(7)); // Not Equal - But "7" Does NOT work
+
+
+    // Practice comparing dif values
+    function compareEquality(a, b){
+        if(a == b) { 
+            return "Equal"; 
+        }
+        return "Not Equal";
+    }
+    console.log("compareEquality: " + compareEquality(5,"5")); 
+    // == will do type confversion so 5 and "5" will equal
+    // === will require them to be same type 5 and 5 to equal
+
+
+
+
 </script>
 
 
