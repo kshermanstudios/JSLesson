@@ -334,6 +334,51 @@
     var myList = [["cearl", 3], ["milk", 2], ["bananas", 3], ["Juice", 2], ["eggs", 12] ]
     console.log(myList);
 
+    // basic func
+    function helloWolrd(){
+        console.log('Hello World');
+    }
+    helloWolrd();
+
+
+    // passing params to func
+    function ourFunc(a, b){
+        console.log(a - b);
+    }
+    ourFunc(10, 5); // outputs 5
+
+    function ourFunc2(a, b){
+        console.log(a + b);
+    }
+    ourFunc2(10, 5); // outputs 15
+
+
+
+    // Global Scope and functions
+    var myGlobal = 10;
+    
+    function fun1(){
+        var oopsGlobal = 5;
+        // with var keyword its only in func scope
+        // without var it would be set as global
+        // which isn't really good code
+
+    }
+
+    function fun2(){
+        var output = "";
+        if(typeof myGlobal != "undefined"){
+            output += "myGlobal: " + myGlobal;
+        }
+        if(typeof oopsGlobal != "undefined"){
+            output += " oopsGlobal: " + oopsGlobal;
+        }
+        console.log(output);
+    }  
+
+    fun1();
+    fun2();
+
 
 
 
