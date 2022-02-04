@@ -523,7 +523,38 @@
     // === will require them to be same type 5 and 5 to equal
 
 
+    // Practice comparing dif values
+    function testStrictNotEqual(val){
+        if(val !== 17) { // must be same type and not "17"
+            return "Not Equal"; 
+        }
+        return "Equal";
+    }
+    console.log("testStrictNotEqual: " + testStrictNotEqual(17)); 
 
+
+    // golf score
+    var names = ['hole in one', 'eagle', 'birdie', 'par', 'bogey', 'double-bogie', 'go home'];
+
+    function golfScroe(par, strokes){
+        if (strokes == 1){
+            return names[0]; // hole in one
+        } else if (strokes <= par - 2){
+            return names[1]; // eagle
+        } else if (strokes == par - 1){
+            return names[2]; // birdie
+        } else if (strokes == par){
+            return names[3]; // par
+        } else if (strokes <= par + 1){
+            return names[4]; // bogey
+        } else if (strokes <= par + 2){
+            return names[5]; // double bogie
+        } else { // go home
+            return names[6];
+        }
+    }
+
+    console.log(golfScroe(4, 3)); // birdie
 
 </script>
 
