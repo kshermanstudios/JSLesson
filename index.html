@@ -580,7 +580,62 @@
         
     }
 
-    console.log(caseInSwitch(4));
+    console.log(caseInSwitch(4)); // marcel
+
+
+    // switch with default option
+    function caseSwitchStuff(val){
+        var answer = "";
+
+        switch(val){
+            case "a": 
+                answer = "apple";
+                break;
+            case "b": 
+                answer = "bird";
+                break;
+            case "c": 
+                answer = "cat";
+                break;
+            default:
+                answer = "Stuff"
+                break;
+        }
+
+        return answer;
+        
+    }
+
+
+    // mult ident options in switch statement
+    function sequencialSizes(val){
+        var answer = "";
+
+        switch(val){
+            case 1:
+            case 2:
+            case 3: 
+            case 4: 
+                answer = "low";
+                break;
+            case 5:
+            case 6:
+            case 7: 
+            case 8: 
+                answer = "med";
+                break;
+            case 9:
+            case 10:
+            case 11: 
+                answer = "high";
+                break;
+        }
+
+        return "sequencialSizes: " + answer;
+        
+    }
+
+    console.log(sequencialSizes(11)); // bird
 
 
 
