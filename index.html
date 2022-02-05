@@ -685,6 +685,24 @@
     }
 
 
+
+    // Return Boolean Vals from funcs
+    function ifLess(a, b){
+        if (a < b) {
+            return true;
+        } else {
+            return false;
+        }
+
+        // this is streamline version of above
+        // it's either going to be true or false
+        return a < b;
+    }
+
+    console.log("ifLess: " + ifLess(22, 15)); // true
+    console.log("ifLess: " + ifLess(10, 15)); // false
+
+
 </script>
 
 
