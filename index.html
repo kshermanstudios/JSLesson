@@ -782,7 +782,7 @@
     
 
 
-    // Accessing Object Props via Dot Notation
+    // Accessing Object property via Dot Notation
     // 2 ways to do access a property in an object
     var testObj = {
         "hat": "ballcap",
@@ -795,7 +795,7 @@
     console.log("testObj" + hatValue  + ", " + shirtValue);
 
 
-    // Accessing via bracket notation
+    // Accessing object property via bracket notation
     // can be used at any time but specifically
     // for when there are spaces in the property name
     var testObj2 = {
@@ -809,7 +809,29 @@
     console.log("testObj2" + entreeValue  + ", " + drinkValue);
 
 
+    // Accessing object property via variables
+    // bracket notation can also be used to look up 
+    // properties via variables
+    var testObj3 = {
+        12 : "Namath",
+        16 : "Montanta",
+        19 : "Unitas"
+    }
+
+    var playerNumber = 16;
+    var player = testObj3[playerNumber];
+    console.log("testObj3 - player: " + player ); // Montanta
+
+
+
+
+
+
+
+
+
 </script>
+
 
 
 
