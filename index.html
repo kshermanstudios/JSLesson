@@ -782,6 +782,33 @@
     
 
 
+    // Accessing Object Props via Dot Notation
+    // 2 ways to do access a property in an object
+    var testObj = {
+        "hat": "ballcap",
+        "shirt": "jersy",
+        "shoes": "cleats"
+    }
+    // dot notation... via dot.
+    var hatValue = testObj.hat;
+    var shirtValue = testObj.shirt;
+    console.log("testObj" + hatValue  + ", " + shirtValue);
+
+
+    // Accessing via bracket notation
+    // can be used at any time but specifically
+    // for when there are spaces in the property name
+    var testObj2 = {
+        "an entree": "hamburger",
+        "my side": "veggies",
+        "the drink": "water"
+    }
+
+    var entreeValue = testObj2["an entree"];
+    var drinkValue = testObj2["the drink"];
+    console.log("testObj2" + entreeValue  + ", " + drinkValue);
+
+
 </script>
 
 
