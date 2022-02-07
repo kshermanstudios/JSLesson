@@ -912,7 +912,35 @@
     console.log("phoneICLookup " + phoneICLookup('bravo') ); // Boston
     
 
- 
+
+
+
+
+
+    // testing Objects for properties
+    var myObject8 = {
+        gift: "pony",
+        pet: "kitten",
+        bed: "sleigh"
+    }
+
+    function checkObj(checkProp){
+        if( myObject8.hasOwnProperty(checkProp)){
+            return myObject8[checkProp]; // pony
+        } else {
+            return 'Not Found'
+        }
+        // return 'Change Me!';
+    }
+
+    console.log('checkObj ' + checkObj('gift')); // pony
+    console.log('checkObj ' + checkObj('blue')); // not found
+    
+
+
+
+
+    
 </script>
 
 
