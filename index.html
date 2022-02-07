@@ -836,9 +836,19 @@
     console.log("testObj4 legs " + testObj4.legs ); // 3
 
 
-    
+    // Add new properties to objects
+    var testObj5 = {
+        "name" : "camper",
+        "legs" : 4,
+        "tails" : 1,
+    }
 
-
+    // add new prop and set to 2
+    testObj5.eyes = 2;
+    console.log("testObj5 eyes " + testObj5.eyes ); // 2
+    // update the prop to 8
+    testObj5[' eyes'] = 8;
+    console.log("testObj5 eyes " + testObj5.eyes ); // 8
 
 </script>
 
