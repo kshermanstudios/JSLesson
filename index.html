@@ -763,6 +763,10 @@
     console.log( cc(2) );
     console.log( cc("Q") );
 
+
+
+
+
     
     // JS Objects
     // sim to arrays but use properties instead of indexes to access data
@@ -988,6 +992,38 @@
     // dot notation
     var gloveBoxContents2 = myStorage['car']['inside']['pasenger seat'];
     console.log('gloveBoxContents2 ' + gloveBoxContents2);
+
+
+
+
+    // Accessinog Nested Arrays
+    var myPlants = [
+        {
+            type: "flowers",
+            list: [
+                "rose",
+                "tulip",
+                "dandelion"
+            ]
+        },
+        {
+            type: "trees",
+            list: [
+                "fir",
+                "pine",
+                "birch"
+            ]
+        }
+    ]
+
+    var secondTree = myPlants[1].type; // trees
+    console.log('secondTree ' + secondTree);
+    var secondTree1 = myPlants[1].list[2]; // birdh
+    console.log('secondTree1 ' + secondTree1);
+
+
+
+
 
 
 
