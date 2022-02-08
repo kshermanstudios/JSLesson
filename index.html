@@ -1133,6 +1133,44 @@
     }
     console.log("ourArry7 " + ourArry7); // 0,2,4,6,8
 
+    var ourArry8 = [];
+    for(var i = 10; i > 0; i -= 1){
+        ourArry8.push(i);
+    }
+    console.log("ourArry8 " + ourArry8); // 10,9,8,7,6,5,4,3,2,1
+
+
+
+    // Iterate through an array witha for loop
+    var ourArray9 = [9, 10, 11, 12];
+    var ourTotal = 0;
+     // init; condition; expression;
+    for(var i = 0; i < ourArray9.length; i++){
+        ourTotal += ourArray9[i]; // += keep adding up the total
+    }
+    console.log("ourTotal " + ourTotal); // 42
+
+
+
+    // Nested For Loops
+    // Mulitdemential arrays
+    function multiplyAll(arr){
+        var product = 1;
+
+        for(var i=0; i < arr.length; i++){
+            for(var j=0; j < arr[i].length; j++) {
+                product *= arr[i][j];
+                console.log(arr[i][j]); // 1,2,3,4,5,6,7
+            }
+        }
+
+        return product;
+
+    }
+
+    var product = multiplyAll([ [1,2],[3,4],[5,6,7] ]);
+    console.log("product " + product); // 5040
+
 
 
 
