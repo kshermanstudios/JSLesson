@@ -1186,7 +1186,54 @@
     console.log(i, myArray11);
 
 
-    
+
+
+
+    // Profile Lookup Coding Challenge
+    // arry with nested objects
+    var contacts = [
+        {
+            "firstName": "Akira",
+            "lastName": "Akira",
+            "number": "11111111111",
+            "likes": ["Pizza", "Codeing", "Weed"],
+        },
+        {
+            "firstName": "Harry",
+            "lastName": "Poster",
+            "number": "22222222222222",
+            "likes": ["balls", "colors", "tobaco"],
+        },
+        {
+            "firstName": "Sherlock",
+            "lastName": "Holmes",
+            "number": "7777777777777",
+            "likes": ["cheese", "blue", "cat"],
+        },
+        {
+            "firstName": "Harry",
+            "lastName": "Potter",
+            "number": "88888888888888",
+            "likes": ["paper", "green", "fun"],
+        }
+    ]
+
+    function lookUpProfile(name, prop){
+        for(var i = 0; i < contacts.length; i++ ){
+            if(contacts[i].firstName === name){
+                return contacts[i][prop] || "No such property";
+            }
+        }
+        return "No such contact";
+
+    }
+
+    // var lookupData = lookUpProfile("Harry", "number");
+    console.log("lookupData " + lookUpProfile("Harry", "number")); //22222222222222 
+    console.log("lookupData " + lookUpProfile("Hello", "number")); // No such contact 
+
+
+
 
 
 
