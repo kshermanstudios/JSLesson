@@ -1235,8 +1235,30 @@
 
 
 
+    // Generate Random Fractions
+    function randomFraction(){
+        // will always be a number between zero and 1...
+        // could be 0 but not a 1
+        return Math.random();
+    }
+
+    console.log("randomFraction " + randomFraction()); // 0.015773625381342304
 
 
+
+
+    // Generate Random Whole Numbers
+    var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+    console.log("randomNumberBetween0and19 " + randomNumberBetween0and19);
+
+    // another ways
+    function randomWholeNum(){
+        return Math.floor( Math.random() * 10 );
+    }
+    console.log("randomWholeNum " + randomWholeNum() );
+
+
+    
 
 
 </script>
