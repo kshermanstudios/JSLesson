@@ -1088,6 +1088,7 @@
 
 
     // iterate with while loops
+    // when we don’t know how many times we want to loop
     // push digets 1-4 into this array
     var myArrayLoop = [];
 
@@ -1097,20 +1098,44 @@
         myArrayLoop.push(i);
         i++;
     }
-
-
     console.log("myArrayLoop " + myArrayLoop);
 
 
+
+
     // Iterate with for loops
+    // when we do know how many times we want to loop
     // for loops are the most common type of loops in JS
     var ourArray5 = [];
     // init; condition; expression;
     for(var i = 0; i < 5; i++){
         ourArray5.push(i);
     }
+    console.log("ourArray5 " + ourArray5); // 0,1,2,3,4
 
-    console.log("ourArray5 " + ourArray5);
+    
+
+
+    // Iterate Odd Numbers with a For loop
+    var ourArry6 = [];
+    for(var i = 0; i < 10; i += 2){
+        ourArry6.push(i);
+    }
+    console.log("ourArry6 " + ourArry6); // 0,2,4,6,8
+
+
+
+
+    // Count Backwards with a For loop
+    var ourArry7 = [];
+    for(var i = 20; i > 0; i -= 2){
+        ourArry7.push(i);
+    }
+    console.log("ourArry7 " + ourArry7); // 0,2,4,6,8
+
+
+
+
 
 
 
