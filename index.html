@@ -1249,9 +1249,8 @@
 
     // Generate Random Whole Numbers
         // Math.floor rounds down to the nearest whole number
-        // .99999 rand * 20 will be 19.998
-        // floor of that is 19
-        // Math.random can never be 1 so always less than 20
+        // .99999 rand * 20 will be 19.99999
+        // Math.random can never be 1 so .99999 rand * 20 will always less than 20
     var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
     console.log("randomNumberBetween0and19 " + randomNumberBetween0and19);
 
@@ -1267,6 +1266,8 @@
     function ourRandomRangeMinMax(ourMin, ourMax){
         // a whole num between 0-9
 
+        // ourMax - ourMin + 1 * Math.random()
+
         // (15 - 5 + 1) = 11 * .999999 = 10.99989 + 5 = 15.99989
         // 15.99 floored is 15
 
@@ -1274,10 +1275,68 @@
         // 6.356663 floored is 6
 
         // (15 - 5 + 1) = 11 * 0 = 0 + 5 = 5
-        // 5 floored is 5
+        // floored is 5
         return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
     }
     console.log("ourRandomRange Min / Max : " + ourRandomRangeMinMax(5,15) );
+
+
+
+
+    // Use the parseInt Function to force to a Interger (number)
+    function convertToInterger(str){
+        return parseInt(str);
+    }
+    console.log("convertToInterger " + convertToInterger("56") ); // 56
+    console.log("convertToInterger " + convertToInterger("hello") ); // NaN
+
+
+
+    // Use the parseInt Function with a Radix
+    function convertToInterger2(str){
+        // the radix specifics the base of the number in the string
+        // base 2 is binary number 01010010010001
+        // default is base 10;
+        return parseInt(str, 2);
+    }
+
+    console.log("convertToInterger " + convertToInterger("100011010") ); // 100022 binary number
+
+
+
+    // Use the conditional (Ternary) Operator
+    function checkEqual(a, b){
+        if(a === b){
+            return true;
+        } else {
+            return false; 
+        }
+    }
+    console.log("checkEqual " + checkEqual(2,3) );
+
+
+    function checkEqualB(a, b){
+        // example of full use
+        return a === b ?  true : false;
+        // shortened would look like this
+        // return a === b;
+    }
+    console.log("checkEqualB " + checkEqualB(2,2) ); // true
+
+
+
+    // Use multiple conditinal (ternary) operators
+    function checkSign(num){
+        return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+        // shortened would look like this
+        // return num > 0 ;
+    }
+    console.log("checkSign " + checkSign(2) ); // positive
+    console.log("checkSign " + checkSign(-1) ); // negative
+    console.log("checkSign " + checkSign(0) ); // zero
+
+
+
 
 
 
