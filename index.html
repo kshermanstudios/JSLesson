@@ -1336,7 +1336,81 @@
     console.log("checkSign " + checkSign(0) ); // zero
 
 
+    
+    
+    // Differences between the var and let keywords
+    // JS historically required var keyword for creating vars
+    // but in ES6 starting in 2015 you can use let
+    // let won't let you declare it twice.
 
+    var catName = "Marcel";
+    var quote;
+
+    // this won't show errors even though it's been declared above
+    var catName = "Daisy";
+    console.log( "catName: " + catName );  // and will just show Daisy 
+
+
+    // But when we change to let
+    let catName2 = "Marcel";
+    /* a redeclaration of either 'var' or 'let' like below 
+        var catName2 = "Daisy";
+        would break the JS and show errors: 
+        'redeclaration of let catName2'
+    */
+
+    function catTalk2(){
+        // this enables scrct with catches basic coding mistakes
+        // and could be set at the top of the page before any other code
+        // or directy inside the function to help catch basic mistake
+        // not using vars not declared and such a var, let or const
+        // just helpful
+        "use strict";
+        catName2 = "Oliver";
+        quote = catName2 + " says Meow!";
+        return quote;
+    }
+    console.log( "catTalk: " + catTalk2() );  // Marcel
+
+
+
+    // compare scopes of var and let keywords
+    // another major diff btween var and let is that var is set globally
+    // but let allows you to keep it within 
+    // a block scope (the if(true) fucntion)
+    // using let allows you to make sure that it's only defined in the
+    // area you want it.
+    function checkScope(){
+        "use scrict";
+        let i = "Kevin";
+        if(true) {
+            let i = "block scope";
+            console.log("Block scope i is: ", i);
+        }
+        console.log("Function scope i is: ", i);
+        return i;
+    }
+    checkScope();
+    
+    
+
+    // Declaring Read-Only Vars with the const keyword
+    function printManyTimes(str){
+        "use scrict";
+        // const vars are using ALL CAPS for easy visual que
+        const SENTENCE = str + " is cool!";
+
+        // using const above will not allow the var
+        // to be reset either on pupose or by accident 
+        // SENTENCE = str + " is amazing!";
+
+        for(var i = 0; i < str.length; i+=2){
+            console.log(SENTENCE);
+        }
+    }
+    printManyTimes("freeCodeCamp");
+
+    
 
 
 
