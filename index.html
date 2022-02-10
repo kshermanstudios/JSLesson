@@ -1444,7 +1444,8 @@
 
         // tries this first and if error goes to catch
         try {
-            MATH_CONSTANTS = 99;
+           //  MATH_CONSTANTS = 99; // commented out so no console error
+           // otherwise uncomment to show the error
         } catch(e){
             console.log("error",e); // show error in console
         }
@@ -1459,7 +1460,72 @@
     console.log("PI ",PI);
 
 
-    
+
+
+    // Using arrow functions to write Concise
+    // Anonymous Function
+    let magic = function(){
+        return new Date();
+    }
+    // be be shortened to this
+    const magic2 = () => new Date();
+
+
+
+    // Write Arrow Functions with parameters
+    const myConcert = function(arr1, arr2){
+        return arr1.concat(arr2);
+    }
+    console.log(myConcert([1,2], [3,4,5]));
+
+    const myConcert2 = (arr1, arr2) => arr1.concat(arr2);
+    console.log(myConcert2([1,2], [3,4,5]));
+
+
+    // Write Higher Order Arrow Funcs
+    // Arrow func work really well with higher order funcs
+    // like map filter and reduce
+    // these take functions as arguments for processing data
+    const realNumberArray = [4, 5.6, -9.9, 3.1, 42, 6, 8.24, -2]
+    const squareList = (arr) => {
+        const squaredIntergers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+        return squaredIntergers;
+    }
+
+    const squaredIntergers = squareList(realNumberArray);
+    console.log('squaredIntergers ' + squaredIntergers);
+
+
+
+    // use can use default params for more flexible functions - increment
+    // when the argument is undefined
+    // value default is 1 if not used like in increment2
+    // value = 1 is just value.. the missing argument will cause an error
+    const increment = (function(){
+        return function increment(number, value = 1){  
+            return number + value;
+        }; 
+    })();
+    console.log('increment ' + increment(5, 2) );
+    console.log('increment2 ' + increment(5) );
+
+
+
+    // Use the Rest Operator with the Function Parameters - reduce
+    // the REST operation allows you create a function 
+    // that takes a variable number of arguments
+    const sum2 = (function(){
+        // return function sum2(x, y, z){ // this is limited to 3 args
+        return function sum2(...args){ // this allows many args
+            // and it creates the 'args' array var and pushes all args into it
+            // automaticall so no need for this
+            // const args = [x, y, z];
+            return args.reduce((a, b) => a + b, 0);
+        };
+    })();
+    // started with 3 args (x, y, z), but can now be many more
+    console.log('sum2 ' + sum2(1, 2, 3, 4, 5, 8, 6, 4)); 
+
 
 
 
