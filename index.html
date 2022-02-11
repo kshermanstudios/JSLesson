@@ -1660,8 +1660,66 @@
     console.log('half2 ' + half2(stats));
 
 
+    // create string using template literals
+    const person = {
+        name: "Zodiac Hasbro",
+        age: 56
+    }
 
 
+    // Template literal with multi line and string interpolation
+    // Use the backtick as oppose quotations
+    // 1- you can make multiline strings
+    // 2- and you can add single or doulble " " in the string
+    // 3- you can put vars directly in the string
+    const greeting = `Hello, my name is ${person.name}!
+    I am ${person.age} years old.`;
+
+    console.log('greeting: ' + greeting);
+
+
+    const result = {
+        success: ["max-length", "no-amd", "preferred-arrow-functions"],
+        failure: ["no-var", "var-on-top", "linebreak"],
+        skipped: ["id-blacklist", "no-dup-keys"]
+    }
+
+    function makeList(arr){
+        // const resultDisplayArray = null;
+        // options 1
+        /*
+        const resultDisplayArray = `
+            <li class="text-warning">${listToShow[0]}</li>
+            <li class="text-warning">${listToShow[1]}</li>
+            <li class="text-warning">${listToShow[2]}</li>`;
+        */
+
+        // option 2
+        /* make an empty array and then use a for loop 
+        to inject items
+        */
+
+        const resultDisplayArray = [];
+
+        for(let i = 0; i < arr.length; i++){
+            resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`);
+        }
+
+        return resultDisplayArray;
+    }
+
+    const resultDisplayArray = makeList(result.failure);
+
+    console.log('resultDisplayArray: ' + resultDisplayArray); 
+    /* prints this
+    <li class="text-warning">no-var</li>,<li class="text-warning">var-on-top</li>,<li class="text-warning">linebreak</li>
+    */
+
+
+
+
+
+    
 </script>
 
 
