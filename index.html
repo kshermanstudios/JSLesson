@@ -1,11 +1,12 @@
-<!doctype html>
-
-</head><html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <title>JS Lessons</title>
     
-    <script>
+    <script type='module'>
+        
+
     // comments!
     console.log('Hello World');
 
@@ -230,19 +231,19 @@
     // Bracket Notation to find First [0] character in string
     var firstName = "Kevin";
 
-    findLetterInFirstName = firstName[0];
+    var findLetterInFirstName = firstName[0];
     console.log(findLetterInFirstName); // K
 
     // Bracket Notation to find First [0] character in string
-    var firstName = "Kevin";
+    var firstNameTwo = "Kevin";
 
-    findThirdLetterInFirstName = firstName[2];
+    var findThirdLetterInFirstName = firstNameTwo[2];
     console.log(findThirdLetterInFirstName); // v
 
     // String Immutability
     var myStr = "Jello World";
     // can't change the var like this
-    myStr[0] = "H"; // wont work
+    // myStr[0] = "H"; // thiswont work
     // but completely changing it, will work.
     myStr = "Hello World"; // error
     console.log(myStr); // Hello World
@@ -780,7 +781,7 @@
         "friends": ["kevin", "daisy"] // arry iside obj
     }
 
-    ourCatPrint = JSON.stringify(ourCat);
+    var ourCatPrint = JSON.stringify(ourCat);
 
     console.log("ourCat " + ourCatPrint );
     
@@ -1872,6 +1873,29 @@
     console.log('temp2 ' + temp);
 
 
+
+
+    // Understand the differences btween import and required
+    // IN the past coders would use the "require" function
+    // to import functions and files from other files
+
+    // but now we have import/export which allows this and 
+    // also allows you to grab only specifics functions or vaiables
+    // from these files
+    // no need for the .js  as it is assumed
+    import {capitalizeSting} from "./stringFunc.js";
+    // added type=module to html tag above
+    // <script type=module >
+    
+    const cap = capitalizeSting("hello!");
+    console.log('cap ' + cap);  // HELLO!
+
+
+
+
+    // Use export to Reuse a code block
+
+    
 
 
 
