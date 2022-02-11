@@ -1733,13 +1733,35 @@
     // if you know you want to make an object 
     // where the key is the name of the var
     // and the value is the value
-    // JS knows it going to return this object and its going to have 3 name/value pairs 
     const createPerson2 = (name, age, gender) => ({name, age, gender});
+    // JS knows it going to return this object and its going to have 3 name/value pairs 
     console.log('createPerson2' + JSON.stringify(createPerson2("Zodiac Hasbro", 56, "male")) );
 
     
 
+    // Write Concise Declarative Functions
+    // an object can contain a function
+    const bicycle = {
+        gear: 2,
+        // this is the long way to put a func within an object
+        setGear: function(newGear){
+            "use strict";
+            this.gear = newGear;
+        },
+        // this is the better way to add a func in an object
+        setGear2(newGear){
+            "use strict";
+            this.gear = newGear;
+        }
+    };
+    console.log('org: ' + bicycle.gear);
+    bicycle.setGear(3);
+    console.log('new: ' + bicycle.gear);
+    bicycle.setGear2(4);
+    console.log('new: ' + bicycle.gear);
 
+    
+    
 
 
 </script>
