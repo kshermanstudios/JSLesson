@@ -1547,9 +1547,117 @@
     console.log('arr2 ' + arr2);
 
 
+    
+    
+    
+    
+    // Use Destruction Assignment to Assign Vars from Objects
+    var voxel = {x: 3.6, y: 7.4, z: 6.54};
+    
+    // old way of assigning
+    var x = voxel.x;
+    var y = voxel.y;
+    var z = voxel.z;
+    console.log('x: ' + x); // 3.6
+
+    // new way of assigning ... creates new vars, d, e, f 
+    // which are seeded by x, y, z
+    const {x:d, y:e, z:f} = voxel;
+    console.log('e: ' + e); // 7.4
 
 
 
+    // Another Example of using Destruction Assignment to Assign Vars
+    const AVG_TEMPERATURES = {
+        today: 77.5,
+        tomorrow: 79
+    };
+
+    function getTempOfTmrw(temps){
+        'use strict';
+        // use destruction to get the 'tomorrow' temp
+        // and set new const 'tempOfTomorrow' with value
+        const {tomorrow : tempOfTomorrow} = temps;
+        return tempOfTomorrow;
+    }
+    console.log('getTempOfTmrw ' +  getTempOfTmrw(AVG_TEMPERATURES) );
+
+
+
+
+
+    // Use Destruction Assignment to Assign Vars From Arrays
+
+    // the diff between Destruction arrays vs objects
+    // is that you cannot specify which items to extract
+    // it goes in order of the array
+
+    // With array we skip the val we dont' want when inserting
+    const [m,n, , ,o] = [1,2,3,4,5,6];
+    console.log(m,n,o); // 1 2 5
+
+    // you can also descruction of arrays
+    // to switch places of vars
+    let k=8, j=6;
+    (() => {
+        'use strict';
+        // switch by reversing order
+        [k, j] = [j, k];
+    })();
+    console.log(k); // 6
+    console.log(j); // 8
+
+
+
+
+
+    // Use Destruction Assignment with the REST operator
+    const source = [1,2,3,4,5,6,7,8,9,10];
+    function removeFirstTwo(list){
+        // set the first two items as empty
+        // this will remove them from the new arr3 var
+        const [, , ...arr3] = list;
+        return arr3;
+    }
+    const arr3 = removeFirstTwo(source);
+    console.log(arr3); // [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+    console.log(source); // [1,2,3,4,5,6,7,8,9,10]
+
+
+
+    // Use Destruction Assignment to pass an object as a func parameter
+    const stats = {
+        max: 56.78,
+        standard_deviations: 4.34,
+        median: 34.54,
+        mode: 23.87,
+        min: -0.75,
+        average: 35.85,
+    }
+    // In this we are passing the full stats object argument
+    // but we are only pulling out the max/min values
+    // but its more data than what we really need
+    const half = (function(){
+        return function half(stats){
+            return (stats.max + stats.min) / 2.0;
+        }
+    })();
+
+    // Cleaner Destruction Assignment
+    // this one does the same results
+    // but only request the max and min variables from the object
+    // its now destructured into just the max/min vars
+    // common with api calls to get the whole oject down
+    // to something we can work with.
+    const half2 = (function(){
+        return function half2({max, min}){
+            return (max + min) / 2.0;
+        }
+    })();
+
+    console.log('stats ' + stats);
+    console.log('half ' + half(stats));
+    console.log('half2 ' + half2(stats));
 
 
 
