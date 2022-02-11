@@ -1762,6 +1762,41 @@
 
     
     
+    // Use class Syntax to Define a Constructor Function
+    // ES6 provides a syntax creating object using the class keyword
+    // old way...
+    var SpaceShuttle = function(targetPlanet){
+        this.targetPlanet = targetPlanet;
+    }
+    var zues = new SpaceShuttle('Jupiter');
+
+    console.log('targetPlanet ' + zues.targetPlanet);
+
+
+    // the class way is preferred to above...
+    class SpaceShuttle2 {
+        constructor(targetPlanet){
+            this.targetPlanet = targetPlanet;
+        }
+    }
+    var zues = new SpaceShuttle2('Jupiter');
+    console.log('targetPlanet2 ' + zues.targetPlanet);
+
+    function makeClass(){
+        class Vegetable {
+            constructor(name){
+                this.name = name;
+            }
+        }
+        return Vegetable;
+    }
+    const Vegetable = makeClass();
+    var carrot = new Vegetable('carrot');
+    console.log('carrot name: ' + carrot.name); 
+
+
+
+    
 
 
 </script>
