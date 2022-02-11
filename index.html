@@ -1717,9 +1717,31 @@
 
 
 
+    // Write Concise Object Literal Declarations using simple fields
+    // option 1
+    const createPerson = (name, age, gender) => {
+        return {
+            // key / value
+            name: name,
+            age: age,
+            gender: gender
+        }
+    }
+    console.log('createPerson' + JSON.stringify(createPerson("Zodiac Hasbro", 56, "male")) );
 
+    // option 2 - simplier
+    // if you know you want to make an object 
+    // where the key is the name of the var
+    // and the value is the value
+    // JS knows it going to return this object and its going to have 3 name/value pairs 
+    const createPerson2 = (name, age, gender) => ({name, age, gender});
+    console.log('createPerson2' + JSON.stringify(createPerson2("Zodiac Hasbro", 56, "male")) );
 
     
+
+
+
+
 </script>
 
 
