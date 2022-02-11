@@ -1782,7 +1782,9 @@
     var zues = new SpaceShuttle2('Jupiter');
     console.log('targetPlanet2 ' + zues.targetPlanet);
 
-    function makeClass(){
+
+    // another example
+    function makeClassCarrot(){
         class Vegetable {
             constructor(name){
                 this.name = name;
@@ -1790,13 +1792,87 @@
         }
         return Vegetable;
     }
-    const Vegetable = makeClass();
+    const Vegetable = makeClassCarrot();
     var carrot = new Vegetable('carrot');
     console.log('carrot name: ' + carrot.name); 
 
 
 
-    
+
+
+
+    // Use getters and setter to Control Access to an Object
+    // with a class object
+    class Book {
+        constructor(author){
+            // the private variable 
+            this._author = author;
+        }
+
+        // getter
+        // this get the private variable from object
+        // never interact dirctly with this._author
+        get writer(){
+            return this._author;
+        }
+
+        // setter
+        // this does the same in setting but never allows 
+        // direct access the object
+        // this change could involve new calculations
+        // and will overwrite any number of code lines
+        // to do diff calcs before setting props
+        set writer(updateAuthor){
+            this._author = updateAuthor;
+        }
+    }
+
+
+
+
+    function makeClassThermo() {
+        class Thermostat {
+            constructor(temp){
+                // fist set the private variable
+                // this means it's only available in this class
+                // _ underscore means its a private var
+                // this is passed in a farenhite but
+                // this converts the temp to celcius
+                this._temp = 5/9 * (temp - 32);
+            }
+            get temperature(){
+                return this._temp;
+            }
+            set temperature(updatedTemp){
+                // this converts the supplied temp of 26 to celcius
+                return this._temp = 5/9 * (updatedTemp - 32);
+            }
+        }
+        return Thermostat;
+
+    }
+
+
+    // this makeClassThermo function is going to return
+    // the Thermostat object via the return Thermostat; above
+    const Thermostat = makeClassThermo(); 
+    // then instatiate a new object
+    const thermos = new Thermostat(76);
+    // the 76 gets coverted to celcius
+
+    // this is using the "get" above to grab the currect data
+    // the no prentheses means its not a function
+    let temp = thermos.temperature; 
+    console.log('temp1 ' + temp); // 76 in celcius is 24.44
+
+    // this is using the setter
+    thermos.temperature = 26;
+    temp = thermos.temperature;
+
+    console.log('temp2 ' + temp);
+
+
+
 
 
 </script>
