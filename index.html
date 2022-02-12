@@ -1883,7 +1883,7 @@
     // from these files
     // no need for the .js  as it is assumed
     // importing funcs and vars in indevidually
-    import {capitalizeSting, capitalizeStingTwo, foo, bar} from "./stringFunc.js"; 
+    import {capitalizeSting, foo, bar} from "./stringFunc.js"; 
 
     // or you can import everything from the external file
     // import * as capitalizeStrings from "./stringFunc.js"; 
@@ -1893,12 +1893,26 @@
     
     const cap = capitalizeSting("hello!");
     console.log('cap ' + cap);  // HELLO!
+    console.log('foo ' + foo);  // cool
+    console.log('bar ' + bar);  // guitar
 
-    // Use export to Reuse a code block
-    // view the stingFunc file for this function and vars
-    const cap2 = capitalizeStingTwo("kevin");
-    console.log('cap2 ' + cap2 + " is " + foo + " because he plays the " + bar);  // Kevin is a foo bar
+    // Another Example
+    import {capitalizeStingTwo, foo2, bar2} from "./stingFuncTwo.js"; 
+    const cap2 = capitalizeStingTwo("kevin"); // Kevin
+    console.log('cap2 ' + cap2 + " is " + foo2 + " because he plays the " + bar2);  // Kevin is a foo bar
 
+   
+
+
+
+    // Use * to Import Everything from a file
+    // import as an Object of anyname
+    import * as capitalizeWord from "./stingFuncsThree.js"; 
+    const carTitle = capitalizeStingTwo("cars"); // Cars .. capped
+    // then use the other imported vars with the object name
+    console.log(carTitle + " : I have both a " + capitalizeWord.car1 + " and a " + capitalizeWord.car2 + ".");  // My cars : I have a jeep and a volkswagon.
+
+   
 
 
 
