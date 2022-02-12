@@ -1914,7 +1914,15 @@
 
    
 
-
+    // Create an Export Fallback with export default
+    // Often used if you on want to export 1 things from the file
+    // to import the default you just use the function name in the 
+    // import line like so
+    import subtract from "./externalFuncs.js"; 
+    // then the default item is avail for use directly
+    const math = subtract(10, 7); // 3
+    // then use the other imported vars with the object name
+    console.log("My calculation is " + math); // 3
 
 
 </script>
