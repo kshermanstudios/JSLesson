@@ -1875,7 +1875,6 @@
 
 
 
-    // Understand the differences btween import and required
     // IN the past coders would use the "require" function
     // to import functions and files from other files
 
@@ -1883,19 +1882,24 @@
     // also allows you to grab only specifics functions or vaiables
     // from these files
     // no need for the .js  as it is assumed
-    import {capitalizeSting} from "./stringFunc.js";
+    // importing funcs and vars in indevidually
+    import {capitalizeSting, capitalizeStingTwo, foo, bar} from "./stringFunc.js"; 
+
+    // or you can import everything from the external file
+    // import * as capitalizeStrings from "./stringFunc.js"; 
+     
     // added type=module to html tag above
     // <script type=module >
     
     const cap = capitalizeSting("hello!");
     console.log('cap ' + cap);  // HELLO!
 
-
-
-
     // Use export to Reuse a code block
+    // view the stingFunc file for this function and vars
+    const cap2 = capitalizeStingTwo("kevin");
+    console.log('cap2 ' + cap2 + " is " + foo + " because he plays the " + bar);  // Kevin is a foo bar
 
-    
+
 
 
 
